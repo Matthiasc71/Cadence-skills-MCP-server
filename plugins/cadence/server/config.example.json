@@ -1,0 +1,41 @@
+{
+  "access": "run",
+  "allow_shell": false,
+  "workdir": "~/cadence_mcp_runs",
+  "allowed_roots": ["~/projets", "/data/designs"],
+  "default_profile": "ic231",
+  "profiles": {
+    "ic617": {
+      "description": "Virtuoso IC6.1.7 + SPECTRE 19.1 (anciens projets)",
+      "setup": "/eda/cadence/setup/IC617_SPECTRE191.csh"
+    },
+    "ic618": {
+      "description": "Virtuoso IC6.1.8 + SPECTRE 21.1",
+      "setup": "/eda/cadence/setup/IC618_SPECTRE211.csh"
+    },
+    "ic231": {
+      "description": "Virtuoso Studio IC23.1 + SPECTRE 23.1 + Genus/Innovus 23.1 + Xcelium 23.09",
+      "setup": "/eda/cadence/setup/IC231.sh"
+    },
+    "ic251": {
+      "description": "Virtuoso Studio IC25.1 + SPECTRE 25.1",
+      "setup": "/eda/cadence/setup/IC251.sh",
+      "env": {"CDS_AUTO_64BIT": "ALL"}
+    },
+    "spb241_windows": {
+      "description": "Allegro X / OrCAD X 24.1 sous Windows",
+      "env": {"PATH": "C:/Cadence/SPB_24.1/tools/bin;C:/Cadence/SPB_24.1/tools/pcb/bin;${PATH}"}
+    }
+  },
+  "binaries": {},
+  "virtuoso": {
+    "skillbridge_id": null,
+    "force_tcp": false,
+    "batch_flag": "-replay",
+    "nocdsinit": false,
+    "project_dir": "~/projets/mon_asic",
+    "cds_log": null
+  },
+  "timeouts": {"default_s": 3600, "version_s": 60},
+  "max_output_chars": 60000
+}

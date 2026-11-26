@@ -1,0 +1,41 @@
+{
+  "name": "cadence",
+  "displayName": "Cadence EDA",
+  "version": "0.2.0",
+  "description": "Pilote Virtuoso/SKILL/OCEAN, Spectre, Genus/Innovus/Tempus, Xcelium et Allegro/OrCAD via un serveur MCP, sur toutes les versions IC6.1.7 -> IC25.1",
+  "author": {
+    "name": "Équipe EDA"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cadence",
+    "eda",
+    "virtuoso",
+    "skill",
+    "spectre",
+    "innovus",
+    "genus",
+    "xcelium",
+    "allegro"
+  ],
+  "userConfig": {
+    "config_file": {
+      "type": "string",
+      "title": "Fichier de configuration cadence-mcp",
+      "description": "Chemin absolu du JSON de configuration (profils de versions, racines autorisées). Vide : variable CADENCE_MCP_CONFIG du shell, sinon valeurs par défaut.",
+      "default": ""
+    },
+    "access": {
+      "type": "string",
+      "title": "Niveau d'accès",
+      "description": "read (inspection), run (simulations et scripts batch, défaut) ou write (modifications de la base de données). Vide : CADENCE_MCP_ACCESS du shell, sinon run.",
+      "default": ""
+    },
+    "python": {
+      "type": "string",
+      "title": "Python >= 3.10 pour le serveur",
+      "description": "Interpréteur utilisé pour créer l'environnement du serveur (utile sur RHEL/CentOS où python3 est trop ancien). Vide : détection automatique.",
+      "default": ""
+    }
+  }
+}

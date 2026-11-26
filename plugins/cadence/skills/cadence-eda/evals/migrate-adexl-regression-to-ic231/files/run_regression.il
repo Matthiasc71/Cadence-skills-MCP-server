@@ -1,0 +1,23 @@
+;; run_regression.il -- nightly regression of amp_lib/tb_ota (written for IC6.1.8, ADE XL)
+;; Usage in the CIW: load("run_regression.il") RegRun("amp_lib" "tb_ota" "adexl")
+
+procedure(RegRun(lib cell view)
+  let((sess hist)
+    sess = axlCreateSession("regSession")
+    axlSetMainSetupDBLCV(sess lib cell view)
+    axlSetCurrentHistory(sess "Active")
+    hist = axlRunAllTests(sess "Nightly")
+    printf("Regression started: %L\n" hist)
+    hist
+  )
+)
+
+procedure(RegReport(sess histName outFile)
+  let((port h)
+    h = axlGetHistoryEntry(axlGetMainSetupDB(sess) histName)
+    port = outfile(outFile "w")
+    foreach(t axlGetTests(axlGetMainSetupDB(sess))
+      fprintf(port "%s\n" car(t)))
+    close(port)
+  )
+)

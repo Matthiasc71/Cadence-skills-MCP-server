@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "cadence": {
+      "command": "bash",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/scripts/cadence-mcp-launch.sh"
+      ],
+      "env": {
+        "CADENCE_MCP_UC_CONFIG": "${user_config.config_file}",
+        "CADENCE_MCP_UC_ACCESS": "${user_config.access}",
+        "CADENCE_MCP_UC_PYTHON": "${user_config.python}"
+      }
+    }
+  }
+}

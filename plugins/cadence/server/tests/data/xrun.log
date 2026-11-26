@@ -1,0 +1,9 @@
+TOOL:	xrun(64)	23.09-s001: Started on Nov 24, 2026 at 10:00:00 CET
+xmvlog: *E,EXPSMC (top.sv,12|5): expecting a semicolon (';') [12.3.2][12.1(IEEE)].
+xmvlog: *W,LIBNOU: Library "work" given but not used.
+xmelab: *F,NOTOPL: no top-level unit found, must have recursive instances.
+UVM_INFO :   10
+UVM_WARNING :    0
+UVM_ERROR :    2
+UVM_FATAL :    0
+TOOL:	xrun(64)	23.09-s001: Exiting on Nov 24, 2026 at 10:00:01 CET  (total: 00:00:01)

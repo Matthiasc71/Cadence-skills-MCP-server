@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: migrate-adexl-regression-to-ic231
+expected_outcome: |
+  run_regression_ic231.il replaces the ADE XL (axl*) calls with the maestro (mae*) API for IC23.1,
+  keeps an IC6.1.8 path only behind a runtime isCallable() probe, and NOTES.md explains that ADE L/XL
+  were removed in IC23.1, lists what to verify on site, and says the code was not executed.
+context:
+  scaffold_script: place-files.sh

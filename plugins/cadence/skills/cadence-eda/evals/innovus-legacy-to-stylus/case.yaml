@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: innovus-legacy-to-stylus
+expected_outcome: |
+  place_stylus.tcl uses Stylus Common UI commands (set_multi_cpu_usage, read_db, set_db
+  design_process_node, place_design, time_design -pre_cts, opt_design -pre_cts, write_db), flags any
+  mapping it is unsure of for get_common_ui_map, and the answer explains launching with
+  innovus -stylus -no_gui -files place_stylus.tcl.
+context:
+  scaffold_script: place-files.sh

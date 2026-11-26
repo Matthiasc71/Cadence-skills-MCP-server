@@ -1,0 +1,26 @@
+HEADER
+"PSFversion" "1.00"
+"analysis type" "dc"
+"analysis name" "dcOp"
+TYPE
+"V" FLOAT DOUBLE PROP(
+"key" "node"
+)
+"bsim4" STRUCT(
+"vth" FLOAT DOUBLE PROP(
+"units" "V"
+)
+"ids" FLOAT DOUBLE
+) PROP(
+"key" "instance"
+)
+VALUE
+"out" "V" 0.9
+"vdd" "V" 1.8
+"M0" "bsim4" (
+0.42
+1.5e-05
+) PROP(
+"key" "instance"
+)
+END

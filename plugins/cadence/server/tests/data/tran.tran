@@ -1,0 +1,42 @@
+HEADER
+"PSFversion" "1.00"
+"PSF style" 7
+"simulator" "spectre"
+"version" "23.1.0.363.isr8"
+"analysis type" "tran"
+"analysis name" "tran"
+TYPE
+"time" FLOAT DOUBLE PROP(
+"key" "sweep"
+)
+"V" FLOAT DOUBLE PROP(
+"units" "V"
+"key" "node"
+)
+"I" FLOAT DOUBLE PROP(
+"units" "A"
+"key" "branch"
+)
+SWEEP
+"time" "time" PROP(
+"key" "sweep"
+)
+TRACE
+"group" GROUP 3
+"out" "V"
+"in" "V"
+"V0:p" "I"
+VALUE
+"time" 0.000000000000000e+00
+"group" 0.0
+0.0
+-1.0e-6
+"time" 1.0e-9
+"group" 0.5
+1.0
+-2.0e-6
+"time" 2.0e-9
+"group" 1.2
+1.0
+-3.0e-6
+END

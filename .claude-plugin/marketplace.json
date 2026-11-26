@@ -1,0 +1,14 @@
+{
+  "name": "cadence-eda",
+  "description": "Outils Cadence Design Systems pour Claude Code : Virtuoso/SKILL/OCEAN, Spectre, Genus/Innovus/Tempus, Xcelium, Allegro/OrCAD (IC6.1.7 -> IC25.1)",
+  "owner": {
+    "name": "Équipe EDA"
+  },
+  "plugins": [
+    {
+      "name": "cadence",
+      "source": "./plugins/cadence",
+      "description": "Serveur MCP Cadence multi-versions + skill d'expertise + commandes /cadence:setup, /cadence:doctor, /cadence:cdsinit"
+    }
+  ]
+}

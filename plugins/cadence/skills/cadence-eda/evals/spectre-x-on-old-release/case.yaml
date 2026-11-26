@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: spectre-x-on-old-release
+expected_outcome: |
+  run_ldo.sh does not rely on Spectre X (+preset) because it does not exist before SPECTRE 19.1; it
+  uses +aps with +mt=8, -format psfascii and -raw ./psf, and the answer explains why Spectre X is
+  not used and what to change after an upgrade (+preset=vx).

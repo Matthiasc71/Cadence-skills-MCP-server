@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cadence-mcp"
+version = "0.2.0"
+description = "Serveur MCP pour les outils Cadence Design Systems (Virtuoso/SKILL, Spectre, Genus/Innovus/Tempus, Xcelium, Allegro/OrCAD), IC6.1.7 -> IC25.1"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "mcp>=1.10",
+]
+
+[project.optional-dependencies]
+virtuoso = ["skillbridge>=1.5"]
+test = ["pytest>=7", "skillbridge>=1.5"]
+
+[project.scripts]
+cadence-mcp = "cadence_mcp.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cadence_mcp = ["skill/*.il"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

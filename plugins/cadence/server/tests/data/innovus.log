@@ -1,0 +1,14 @@
+@(#)CDS: Innovus v21.18-s099_1 (64bit) 07/18/2023 13:03 (Linux 3.10.0-693.el7.x86_64)
+**WARN: (IMPLF-200):	Pin 'A' in macro 'INVX1' has no ANTENNAGATEAREA defined.
+**WARN: (IMPLF-200):	Pin 'B' in macro 'NAND2X1' has no ANTENNAGATEAREA defined.
+**ERROR: (IMPSYT-6000):	No Netlist files provided.
+------------------------------------------------------------
+     timeDesign Summary
+------------------------------------------------------------
++--------------------+---------+---------+
+|     Setup mode     |   all   | reg2reg |
++--------------------+---------+---------+
+|           WNS (ns):| -0.123  | -0.123  |
+|           TNS (ns):| -4.567  | -4.567  |
+|    Violating Paths:|   42    |   42    |
++--------------------+---------+---------+

@@ -1,0 +1,42 @@
+<evaluation>
+   <qa_pair>
+      <question>In the archived place-and-route runs, find the stage at which setup timing was finally met (no violating paths). How many setup-violating paths did the run immediately before it report? Answer with an integer, digits only.</question>
+      <answer>12</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>Among the archived circuit simulations, take the successful small-signal frequency analysis of the two-stage amplifier. At what frequency does its output gain cross 0 dB? Answer in MHz rounded to the nearest integer, digits only.</question>
+      <answer>91</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>One archived analog simulation stopped before simulating because a device referenced something that was never defined. What is the name of that missing model or subcircuit? Answer with the name only.</question>
+      <answer>resx</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>Of the configured Cadence installations, which one has a circuit simulator too old to use the Spectre X engine? Answer with the profile name only.</question>
+      <answer>ic617</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>In the amplifier library, one cell has a simulation setup view (ADE Explorer/Assembler) but no physical layout. Which cell is it? Answer with the cell name only.</question>
+      <answer>tb_ota</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>In the schematic of the two-stage OTA, what is the total drawn width, in micrometres, of all p-channel transistors? Answer with a number only, no unit.</question>
+      <answer>24</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>In the archived logic synthesis run, which warning message ID occurs most often? Answer with the ID exactly as printed (for example ABC-123).</question>
+      <answer>PHYS-12</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>One archived UVM regression did not pass. What is the name of the UVM test it ran? Answer with the test name only.</question>
+      <answer>dma_burst_test</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>In the archived transient simulation, what is the highest voltage reached by the output node? Answer in volts rounded to two decimals, digits only.</question>
+      <answer>2.26</answer>
+   </qa_pair>
+   <qa_pair>
+      <question>How many cells of the Cadence analog primitives library provide a Verilog-A view? Answer with an integer, digits only.</question>
+      <answer>5</answer>
+   </qa_pair>
+</evaluation>

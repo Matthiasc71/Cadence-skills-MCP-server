@@ -1,0 +1,29 @@
+HEADER
+"PSFversion" "1.00"
+"analysis type" "ac"
+"analysis name" "ac"
+TYPE
+"freq" FLOAT DOUBLE PROP(
+"key" "sweep"
+)
+"V" COMPLEX DOUBLE PROP(
+"key" "node"
+)
+SWEEP
+"freq" "freq" PROP(
+"key" "sweep"
+)
+TRACE
+"out" "V"
+VALUE
+"freq" 1.0
+"out" (100.0 0.0)
+"freq" 10.0
+"out" (99.0 -5.0)
+"freq" 100.0
+"out" (50.0 -50.0)
+"freq" 1000.0
+"out" (5.0 -9.0)
+"freq" 10000.0
+"out" (0.1 -0.5)
+END

@@ -1,0 +1,10 @@
+Cadence (R) Virtuoso (R) Spectre (R) Circuit Simulation
+Version 23.1.0.363.isr8 64bit -- 5 Mar 2024
+
+WARNING (SPECTRE-16707): Only tran analysis is supported in this mode.
+WARNING (SPECTRE-16707): Only tran analysis is supported in this mode.
+ERROR (SFE-23): "input.scs" 12: The instance `R1' is referencing an undefined model or subcircuit, `resx'.
+    Either include the file containing the definition of `resx', or define `resx' before running the simulation.
+Total time required for tran analysis `tran': CPU = 37.994 ms, elapsed = 38.7759 ms.
+Convergence failure at time 1n
+spectre completes with 1 error, 2 warnings, and 0 notices.
