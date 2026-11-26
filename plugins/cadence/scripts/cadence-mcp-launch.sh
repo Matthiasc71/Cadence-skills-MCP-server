@@ -26,14 +26,27 @@ PY_WANTED=$(uc "${CADENCE_MCP_UC_PYTHON:-}" || uc "${CADENCE_MCP_PYTHON:-}" || t
 unset CADENCE_MCP_UC_CONFIG CADENCE_MCP_UC_ACCESS CADENCE_MCP_UC_PYTHON
 
 find_python() {
-  local c
-  for c in ${PY_WANTED:+"$PY_WANTED"} python3.13 python3.12 python3.11 python3.10 python3; do
-    if command -v "$c" >/dev/null 2>&1 &&
-       "$c" -c 'import sys; sys.exit(0 if sys.version_info >= (3, 10) else 1)' 2>/dev/null; then
-      command -v "$c"; return 0
+  # Prints the absolute path of a Python >= 3.10 (works with python3.x, python, and the Windows "py" launcher).
+  local c exe
+  for c in ${PY_WANTED:+"$PY_WANTED"} python3.13 python3.12 python3.11 python3.10 python3 python py; do
+    command -v "$c" >/dev/null 2>&1 || continue
+    if [ "$c" = "py" ]; then
+      exe=$(py -3 -c 'import sys; print(sys.executable) if sys.version_info >= (3, 10) else sys.exit(1)' 2>/dev/null) || continue
+    else
+      exe=$("$c" -c 'import sys; print(sys.executable) if sys.version_info >= (3, 10) else sys.exit(1)' 2>/dev/null) || continue
     fi
+    [ -n "$exe" ] && { printf '%s' "$exe" | tr -d '\r'; return 0; }
   done
   return 1
+}
+
+venv_bin() {  # Windows venvs use Scripts/, POSIX venvs use bin/
+  if [ -d "$VENV/Scripts" ]; then printf '%s' "$VENV/Scripts"; else printf '%s' "$VENV/bin"; fi
+}
+
+have_server() {
+  local b; b=$(venv_bin)
+  [ -x "$b/cadence-mcp" ] || [ -x "$b/cadence-mcp.exe" ]
 }
 
 stamp_value() {
@@ -53,17 +66,17 @@ install_env() {
   mkdir -p "$DATA"
   rm -rf "$VENV"
   "$py" -m venv "$VENV" >&2
-  "$VENV/bin/python" -m pip install --quiet --upgrade pip >&2 || true
-  "$VENV/bin/python" -m pip install --quiet "$ROOT/server[virtuoso]" >&2
+  "$(venv_bin)/python" -m pip install --quiet --upgrade pip >&2 || true
+  "$(venv_bin)/python" -m pip install --quiet "$ROOT/server[virtuoso]" >&2
   stamp_value > "$STAMP"
   log "environnement prêt"
 }
 
-if [ ! -x "$VENV/bin/cadence-mcp" ] || [ ! -f "$STAMP" ] || [ "$(cat "$STAMP")" != "$(stamp_value)" ]; then
+if ! have_server || [ ! -f "$STAMP" ] || [ "$(cat "$STAMP")" != "$(stamp_value)" ]; then
   install_env
 fi
 
 if [ "${1:-}" = "--install-only" ]; then
   exit 0
 fi
-exec "$VENV/bin/cadence-mcp" "$@"
+exec "$(venv_bin)/cadence-mcp" "$@"

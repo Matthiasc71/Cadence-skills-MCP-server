@@ -9,7 +9,7 @@ Prépare le serveur MCP `cadence` sur cette machine.
 1. Lance l'installation (elle crée l'environnement Python du serveur, ou le met à jour) :
 
    ```bash
-   bash "${CLAUDE_PLUGIN_ROOT}/scripts/cadence-mcp-launch.sh" --install-only
+   CLAUDE_PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT}" CLAUDE_PLUGIN_DATA="${CLAUDE_PLUGIN_DATA}" bash "${CLAUDE_PLUGIN_ROOT}/scripts/cadence-mcp-launch.sh" --install-only
    ```
 
    Si elle échoue parce que Python >= 3.10 est introuvable, explique à l'utilisateur comment
@@ -19,7 +19,7 @@ Prépare le serveur MCP `cadence` sur cette machine.
 2. Vérifie la configuration sans lancer les outils Cadence :
 
    ```bash
-   bash "${CLAUDE_PLUGIN_ROOT}/scripts/cadence-mcp-launch.sh" doctor --fast
+   CLAUDE_PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT}" CLAUDE_PLUGIN_DATA="${CLAUDE_PLUGIN_DATA}" bash "${CLAUDE_PLUGIN_ROOT}/scripts/cadence-mcp-launch.sh" doctor --fast
    ```
 
 3. Résume en quelques lignes : niveau d'accès, profils, outils trouvés et manquants. Si aucun outil

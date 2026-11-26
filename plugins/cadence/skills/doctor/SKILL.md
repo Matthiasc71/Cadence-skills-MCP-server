@@ -10,7 +10,7 @@ Diagnostique l'installation Cadence.
 Lance la commande suivante. Si l'utilisateur a donné un profil ($ARGUMENTS), ajoute `--profile <profil>` :
 
 ```bash
-bash "${CLAUDE_PLUGIN_ROOT}/scripts/cadence-mcp-launch.sh" doctor
+CLAUDE_PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT}" CLAUDE_PLUGIN_DATA="${CLAUDE_PLUGIN_DATA}" bash "${CLAUDE_PLUGIN_ROOT}/scripts/cadence-mcp-launch.sh" doctor
 ```
 
 Les requêtes de version peuvent prendre jusqu'à une minute par outil (vérification de licence).

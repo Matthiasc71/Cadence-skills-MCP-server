@@ -11,7 +11,7 @@ Lance la commande suivante. Si l'utilisateur a donné un identifiant de session 
 ajoute `--id <identifiant>` :
 
 ```bash
-bash "${CLAUDE_PLUGIN_ROOT}/scripts/cadence-mcp-launch.sh" cdsinit
+CLAUDE_PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT}" CLAUDE_PLUGIN_DATA="${CLAUDE_PLUGIN_DATA}" bash "${CLAUDE_PLUGIN_ROOT}/scripts/cadence-mcp-launch.sh" cdsinit
 ```
 
 Montre les lignes obtenues dans un bloc de code, puis explique :
